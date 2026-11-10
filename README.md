@@ -12,9 +12,9 @@
 * * *
 
 ## 项目特点:
-* 本项目用于在 Koyeb 免费服务上部署 V2ray ，采用的方案为 Nginx + WebSocket + VMess/VLess + TLS。
-* V2ray 核心文件和配置文件作了“特殊处理”，每个项目都不同，大大降低被封和连坐风险
-* vmess 和 vless 的 uuid，路径既可以自定义，又或者使用默认值
+* 本项目用于在 Koyeb 免费服务上部署 Xray(原 v2fly 版本改造),采用的方案为 Nginx + XHTTP(VLESS)+ TLS。
+* Xray 核心文件和配置文件作了“特殊处理”，每个项目都不同，大大降低被封和连坐风险
+* vless 的 uuid，XHTTP 路径既可以自定义，又或者使用默认值
 * 集成哪吒探针，可以自由选择是否安装
 * 部署完成如发现不能上网，请检查域名是否被墙，可使用 Cloudflare CDN 或者 worker 解决。
 
@@ -25,8 +25,7 @@
   | 变量名 | 是否必须 | 默认值 | 备注 |
   | ------------ | ------ | ------ | ------ |
   | UUID         | 否 | de04add9-5c68-8bab-950c-08cd5320df18 | 可在线生成 https://www.zxgj.cn/g/uuid |
-  | VMESS_WSPATH | 否 | /vmess | 以 / 开头 |
-  | VLESS_WSPATH | 否 | /vless | 以 / 开头 |
+  | VLESS_PATH   | 否 | /vless | XHTTP 路径,以 / 开头(兼容旧变量名 VLESS_WSPATH) |
   | NEZHA_SERVER | 否 |        | 哪吒探针服务端的 IP 或域名 |
   | NEZHA_PORT   | 否 |        | 哪吒探针服务端的端口 |
   | NEZHA_KEY    | 否 |        | 哪吒探针客户端专用 Key |
